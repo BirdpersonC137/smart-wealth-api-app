@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @investment.ticker %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @investment.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @investment.price %>
+</p>
+
+<p>
+  <strong>Yield:</strong>
+  <%= @investment.yield %>
+</p>
+
+<p>
+  <strong>Mer:</strong>
+  <%= @investment.MER %>
+</p>
+
+<p>
+  <strong>Risk category:</strong>
+  <%= @investment.risk_category %>
+</p>
+
+<p>
+  <strong>Objective:</strong>
+  <%= @investment.objective %>
+</p>
+
+<p>
+  <strong>Distribution:</strong>
+  <%= @investment.distribution %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @investment.style %>
+</p>
+
+<%= link_to 'Edit', edit_investment_path(@investment) %> |
+<%= link_to 'Back', investments_path %>
