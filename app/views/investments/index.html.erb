@@ -23,9 +23,9 @@
       <tr>
         <td><%= investment.ticker %></td>
         <td><%= investment.name %></td>
-        <td><%= investment.price %></td>
+        <td><%= number_to_currency(investment.price)%></td>
         <td><%= investment.yield %></td>
-        <td><%= investment.MER %></td>
+        <td><%= investment.mer %></td>
         <td><%= investment.risk_category %></td>
         <td><%= investment.objective %></td>
         <td><%= investment.distribution %></td>
