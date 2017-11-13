@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Investments</h1>
-<%= form_tag(investments_path, method: :get, class: 'form-inline') do %>
+<div class="d-flex justify-content-between">
+<%= form_tag(investments_path, method: :get) do %>
   <%= text_field_tag :search %>
-<i class="fa fa-search" aria-hidden="true"><%= submit_tag %></i>
+  <%= submit_tag 'Search' %>
 <% end %>
+<%= link_to 'Add a security', new_investment_path, class: "btn btn-primary" %>
+</div>
 <hr>
 <table class="table table-bordered table-striped">
   <thead class="thread-inverse">
@@ -34,6 +37,9 @@
         <td><%= investment.objective %></td>
         <td><%= investment.distribution %></td>
         <td><%= investment.style %></td>
+        <td><%= link_to 'Show', investment %></td>
+        <td><%= link_to 'Edit', edit_investment_path(investment) %></td>
+        <td><%= link_to 'Destroy', investment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -41,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Investment', new_investment_path %>
+
