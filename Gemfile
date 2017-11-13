@@ -95,3 +95,4 @@ gem 'active_model_serializers'
 ##################STOCKS#######################
 gem 'stock_quote', '~> 1.2', '>= 1.2.3'
 gem 'foreman'
+#################SEARCH#######################
