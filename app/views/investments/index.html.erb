@@ -2,19 +2,19 @@
 
 <h1>Investments</h1>
 
-<table>
-  <thead>
+<table class="table table-bordered table-striped">
+  <thead class="thread-inverse">
     <tr>
-      <th>Ticker</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Yield</th>
-      <th>Mer</th>
-      <th>Risk category</th>
-      <th>Objective</th>
-      <th>Distribution</th>
-      <th>Style</th>
-      <th colspan="3"></th>
+      <th> <%= sortable "ticker"%></th>
+      <th> <%= sortable "name"%>
+      <th> <%= sortable "price"%></th>
+      <th> <%= sortable "yield"%></th>
+      <th> <%= sortable "mer"%></th>
+      <th> <%= sortable "risk_category"%></th>
+      <th> <%= sortable "objective"%></th>
+      <th> <%= sortable "distribution"%></th>
+      <th> <%= sortable "style"%></th>
+      <th  colspan="3"></th>
     </tr>
   </thead>
 
@@ -24,8 +24,8 @@
         <td><%= investment.ticker %></td>
         <td><%= investment.name %></td>
         <td><%= number_to_currency(investment.price)%></td>
-        <td><%= investment.yield %></td>
-        <td><%= investment.mer %></td>
+        <td><%= number_to_percentage(investment.yield)%></td>
+        <td><%= number_to_percentage(investment.mer) %></td>
         <td><%= investment.risk_category %></td>
         <td><%= investment.objective %></td>
         <td><%= investment.distribution %></td>

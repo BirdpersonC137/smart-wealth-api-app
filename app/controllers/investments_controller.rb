@@ -1,10 +1,10 @@
 class InvestmentsController < ApplicationController
   before_action :set_investment, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /investments
   # GET /investments.json
   def index
-    @investments = Investment.all
+    @investments = Investment.order((sort_column + " " + sort_direction))
   end
 
   # GET /investments/1
@@ -70,5 +70,13 @@ class InvestmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def investment_params
       params.require(:investment).permit(:ticker, :name, :price, :yield, :MER, :risk_category, :objective, :distribution, :style)
+    end
+  
+    def sort_column
+      Investment.column_names.include?(params[:sort]) ? params[:sort] : "ticker"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
