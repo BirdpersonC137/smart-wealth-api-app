@@ -32,7 +32,8 @@ gem 'cancancan', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 ###################FRONT-END/VIEWS################
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'chosen-rails'
