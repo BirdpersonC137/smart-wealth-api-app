@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Investments</h1>
-
+<%= form_tag(investments_path, method: :get, class: 'form-inline') do %>
+  <%= text_field_tag :search %>
+<i class="fa fa-search" aria-hidden="true"><%= submit_tag %></i>
+<% end %>
+<hr>
 <table class="table table-bordered table-striped">
   <thead class="thread-inverse">
     <tr>
@@ -30,9 +34,6 @@
         <td><%= investment.objective %></td>
         <td><%= investment.distribution %></td>
         <td><%= investment.style %></td>
-        <td><%= link_to 'Show', investment %></td>
-        <td><%= link_to 'Edit', edit_investment_path(investment) %></td>
-        <td><%= link_to 'Destroy', investment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -5,6 +5,7 @@ class InvestmentsController < ApplicationController
   # GET /investments.json
   def index
     @investments = Investment.order((sort_column + " " + sort_direction))
+    @investments = @investments.search(params[:search])
   end
 
   # GET /investments/1
@@ -69,7 +70,7 @@ class InvestmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def investment_params
-      params.require(:investment).permit(:ticker, :name, :price, :yield, :MER, :risk_category, :objective, :distribution, :style)
+      params.require(:investment).permit(:ticker, :name, :price, :yield, :MER, :risk_category, :objective, :distribution, :style, :term)
     end
   
     def sort_column
