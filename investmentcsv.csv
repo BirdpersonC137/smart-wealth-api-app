@@ -1,0 +1,98 @@
+﻿ticker,name,price,yield,mer,risk_category,objective,distribution,style,typeof,created_at,updated_at
+IP-US,International Paper,42.91,4.1,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+AP.UT-CA,Allied Properties REIT,35.27,4.1,0,Medium,Income,Monthly,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+GILD-US,Gilead Sciences Inc.,90.21,1.9,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+NKE-US,Nike,53.82,1.4,0,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+CU-CA,Canadian Utilities,37.02,2.88,0,Medium,Income,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+AAPL-US,Apple Inc. ,98.99,2.1,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+TSN-US,"Tyson Foods, Inc.",58.05,1.6,0,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+BNS-CA,Bank of Nova Scotia,78.75,3.86,0,Medium,Income,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+LYB-US,LyondellBasell Industires,79.23,4.5,0,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+QCOM-US,Qualcomm Inc,52.53,4.04,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+JPM-US,J.P. Morgan Chase & Co.,62.82,2.68,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+L-CA,Loblaw Companies Ltd,64.41,1.6,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+WMT-US,Walmart,66.77,3,0,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+PJT-US,PJT Partners,35.05,0.57,0,High,Agg Growth,Quarterly,Small / Medium Cap,US Equity,2017-11-13,2017-11-13
+PHM-US,PulteGroup Inc.,18.64,1.6,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+HBC-CA,Hudson's Bay Company,16.58,1.21,0,Medium,Income,Quarterly,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+POW-CA,Power Corporation of Canada,30.09,3.41,0,Medium,Income,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+QBR.B-CA,Quebecor Inc.,31.4,0.5,0,Medium,Income,Quarterly,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+MRK-US,Merck & Co.,55.37,3.47,0,Medium,Income,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+ATD.B-CA,Alimentation Couche-Tard,61.49,1.56,0,Medium,Income/Growth,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+RY-CA,Royal Bank of Canada,79.36,3.86,0,Medium,Income,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+SBUX-US,Starbucks Corp.,54,1.85,0,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+T-CA,TELUS Corp,43,3.75,0,Medium,Income,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+CTC.A-CA,Canadian Tire,128.59,1.8,0,Medium,Income/Growth,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+TD-CA,Toronto-Dominion Bank,52.28,3.39,0,Medium,Income,Quarterly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+CPG-CA,Cresent Point Energy,14.4,2.5,0,Medium,Income/Growth,Monthly,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+SPLV-US,Power Shares Low Vol. ,43.45,2,0.25,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+MAL-CA,Magellan Aerospace,18.08,1.45,0,Medium,Growth,Quarterly,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+KEY-CA,Keyera Corp,40.02,3.97,0,Medium,Income/Growth,Monthly,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+DIS-US,Disney,93.15,1.53,0,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+CJP-CA,iShares Japan Fundamental (CAD hedge),16.51,0.8,0,Medium,Growth,Quarterly,Large Cap,Int Equity,2017-11-13,2017-11-13
+DXJ-US,Wisdom Tree Japan - USD hedged,59.04,1.6,0,Medium,Income/Growh,Quarterly,Large Cap,Int Equity,2017-11-13,2017-11-13
+EEMV-US,Ishares Edge MSIC Min Vol EM,52.04,2.46,0.25,Medium,Income/Growth,Quarterly,Large Cap,Emerging Equity,2017-11-13,2017-11-13
+VOO-US,Vanguard S&P500 Index - US Based,200.52,1.99,0.05,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+VFV-CA,Vanguard S&P500 Index (No Hedge),48.87,2.07,0.08,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+XFI-CA,Ishares EAFE Factor Select ,19.19,1.1,0.45,Medium,Growth,Quarterly,Large Cap,Int Equity,2017-11-13,2017-11-13
+SDIV-US,Global X - Superdividend,21.38,7.08,0.58,Medium,Income/Growth,Monthly,Large Cap,Int Equity,2017-11-13,2017-11-13
+QQQ-US,PowerShares Nasdaq 100,110.08,1.1,0.2,Medium,Income/Growth,Monthly,Large Cap,US Equity,2017-11-13,2017-11-13
+ILV-CA,Powershares International Low Volatility ETF,19.76,3.4,0,Medium,Income,Quarterly,Large Cap,Int Equity,2017-11-13,2017-11-13
+MAW150,Mawer Global Small Cap ,12.93,0,1.74,High,Growth,Quarterly,Small / Medium Cap,Int Equity,2017-11-13,2017-11-13
+PEY-US,PowerShares High Yield Equity Dividend,11.44,3.24,0.55,High,Agg Growth,Monthly,Large Cap,US Equity,2017-11-13,2017-11-13
+ZWH-CA,BMO US High Dividend Covered Call ETF,20.32,5.94,0.71,Medium,Income/Growth,Monthly,Large Cap,US Equity,2017-11-13,2017-11-13
+VB-US,Vanguard U.S. Small Cap ETF,123.27,3.4,0.09,High,Income,Annually,Small / Medium Cap,US Equity,2017-11-13,2017-11-13
+VEA-US,Vanguard FTSE Developed Markets ETF,38.57,3.52,0.09,Medium,Income,Quarterly,Large Cap,Int Equity,2017-11-13,2017-11-13
+VGK-US,Vanguard MSCI Europe ETF,57.19,4.43,0.12,Medium,Income,Quarterly,Large Cap,Int Equity,2017-11-13,2017-11-13
+VSS-US,Vanguard FTSE All-World es-U.S. Small Cap,98.76,2.76,0.19,Medium,Income,Quarterly,Small / Medium Cap,Int Equity,2017-11-13,2017-11-13
+BOND-US,Pimco Total Retrun Active ETF,107.69,3.6,0.57,Low,Income/Growth,Monthly,Fixed Income Multi,Fixed Income,2017-11-13,2017-11-13
+BNDX-US,Vanguard Total Intl Bond ETF,56.08,1.5,0.15,Low,Income/Growth,Monthly,Fixed Income Multi,Fixed Income,2017-11-13,2017-11-13
+FTLS-US,First Trust Long/Short Equity ETF,33.31,0.7,0.95,High,Growth,Quarterly,Alternative Total Return,Alternative,2017-11-13,2017-11-13
+MNA-US,IQ Merger Arbitrage ETF,28.92,0,0.76,High,Growth,None,Alternative Total Return,US Equity,2017-11-13,2017-11-13
+IAU-US,ishares Gold Trust,12.91,0,0.25,Medium,Growth,None,Alternative Total Return,Alternative,2017-11-13,2017-11-13
+PFF-US,iShares U.S. Preferred Stock ETF,39.43,5.67,0.47,Medium,Income,Monthly,Alternative Yield,Alternative,2017-11-13,2017-11-13
+KLD-US,iShares MSCI USA ESG Select ETF,91.93,1.4,0.5,Medium,Income/Growth,Quarterly,Large Cap,US Equity,2017-11-13,2017-11-13
+VWO-US,Vanguard FTSE Emerging Markets ETF,38.31,2.76,0.15,Medium,Income,Quarterly,Large Cap,Emerging Equity,2017-11-13,2017-11-13
+ZWE-CA,BMO Europe High Div. Covered Call (hedged),19.3,7.94,0.71,Medium,Income/Growth,Monthly,Large Cap,Int Equity,2017-11-13,2017-11-13
+ZWB-CA,BMO Canadian Banks Covered Call ETF,15.73,5.44,0.71,Medium,Income,Monthly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+AGF824,AGF Total Return Bond Fund,3.31,6.44,1.16,Medium,Income,Monthly,Fixed Income High Yield,Fixed Income,2017-11-13,2017-11-13
+FID661,Fidelity Small Cap America,76.85,0,1.19,High,Growth,Annually,Small / Medium Cap,US Equity,2017-11-13,2017-11-13
+GGF734,BMO Asian Growth & Income,18.56,1.62,1.19,Medium,Growth,Annually,Large Cap,Emerging Equity,2017-11-13,2017-11-13
+MFC1802,Mackenzie US Mid Cap Growth,38.81,0,1.33,Medium,Growth,Annually,Small / Medium Cap,US Equity,2017-11-13,2017-11-13
+DYN3058,Dynamic Advantage Bond Fund,5.09,1.48,0.88,Low,Income,Monthly,Fixed Income Protection,Fixed Income,2017-11-13,2017-11-13
+DYN2853,Dynamic Premium Yield,10.93,6.2,1.48,Medium,Income(50)/Growth(50),Monthly,Alternative Yield,US Equity,2017-11-13,2017-11-13
+DYN3933,Dynamic International Dividend Private Pool,9.75,4.2,0.96,Medium,Growth,Monthly,Large Cap,Int Equity,2017-11-13,2017-11-13
+FID610,Fidelity North Star Class,1,0,1.17,Medium,Growth,Annually,Large Cap,CAD Equity,2017-11-13,2017-11-13
+NCE621,Sentry Small & Midcap Income Fund,14.65,3.6,1.35,Medium,Growth,Monthly,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+NWT595,NEI Global Total Return Bond Fund,10.83,4.1,1.02,Medium,Income,Annually,Fixed Income Multi,Fixed Income,2017-11-13,2017-11-13
+NCE617,Sentry Canadian Income Fund,19.98,4.4,1.19,Medium,Income(50)/Growth(50),Monthly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+NCE637,Sentry U.S. Growth and Income,11.18,1.88,1.24,Medium,Income(50)/Growth(50),Monthly,Large Cap,US Equity,2017-11-13,2017-11-13
+NWT984/8584,NEI Ethical Global Dividend Fund,10,3.96,1.43,Medium,Growth,Monthly,Large Cap,Int Equity,2017-11-13,2017-11-13
+NWT988/8988,NEI Environmental Leaders Fund,10.54,0,1,Medium,Growth,None,Large Cap,Int Equity,2017-11-13,2017-11-13
+NWT967,NEI Ethical Special Equity Fund,18.27,0.81,1.57,Medium,Growth,Annually,Small / Medium Cap,Int Equity,2017-11-13,2017-11-13
+NXG1328/NXG1329,NexGen Canadian Bond Tax Managed,10.05,3.6,0.85,Low,Income,Monthly,Fixed Income Protection,Fixed Income,2017-11-13,2017-11-13
+NXG5328,NexGen Canadian Pref Share Tax Managed,9.91,5,0.75,Medium,Income,Monthly,Alternative Yield,Alternative,2017-11-13,2017-11-13
+CCM1450,IA Clarington Small Cap ,74.08,5.06,1.35,Medium,Growth,Annually,Large Cap,CAD Equity,2017-11-13,2017-11-13
+NXG5198/5199,NexGen Global Equity Tax Managed Fund,10.85,3.6,1,Medium,Growth,Monthly,Large Cap,Int Equity,2017-11-13,2017-11-13
+NXG6138,Oakmark International Natixus Tax Managed,1,6,1,High,Growth,Monthly,Large Cap,Int Equity,2017-11-13,2017-11-13
+PMO205,PIMCO Monthly Income Fund,14.2,4.5,0.83,Low,Income,Monthly,Fixed Income Multi,Fixed Income,2017-11-13,2017-11-13
+QWE424,AlphaDelta Canadian Prosperity Class,10.02,0,0.75,High,Growth,Annually,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+RBF5610,PH&N Community Values Bond Fund,11.21,2.74,0.6,Low,Income,Quarterly,Large Cap,Fixed Income,2017-11-13,2017-11-13
+RBF653,RBC Jantzi Global Equity Fund,12.76,0,1.31,Medium,Income,Annually,Large Cap,Int Equity,2017-11-13,2017-11-13
+RBF699,RBC Emering Markets Equity,14.74,0.75,1.19,High,Growth,Annually,Large Cap,Emerging Equity,2017-11-13,2017-11-13
+SUN404,Sun Life MFS International Value Fund,18.78,1.72,1.36,Medium,Growth,Annually,Large Cap,Int Equity,2017-11-13,2017-11-13
+GOC2003,Canoe Energy Income Fund,12.3,4.86,1.77,Medium,Growth,Monthly,Large Cap,CAD Equity,2017-11-13,2017-11-13
+GOC503,Canoe Enegy Fund,13.09,0,1.73,High,Growth,None,Small / Medium Cap,CAD Equity,2017-11-13,2017-11-13
+CASH,Cash Holding,1,0.8,0,Low,Income,Monthly,Fixed Income Protection,Alternative,2017-11-14,2017-11-14
+FIA294,Fiara Arbitrage,100,1,0,Medium,Income/Growth,Semi-Annual,Fixed Income Protection,Alternative,2017-11-15,2017-11-15
+TRZ110,Trez Capital,10,7,1,Medium,Income/Growth,Quarterly,Alternative Yield,Alternative,2017-11-16,2017-11-16
+AGQ201,Algonquin Debt Strategies Fund,11.42,0,1.5,Medium,Income,Annually,Alternative Total Return,Alternative,2017-11-17,2017-11-17
+NEC600,RC Morris Distressed Debt,16.53,8,1.25,High,Growth,Annually,Alternative Yield,Alternative,2017-11-18,2017-11-18
+FGM003,Formula Growth Alpha,10,0,1.25,Medium,Growth,Annually,Alternative Total Return,Alternative,2017-11-19,2017-11-19
+KEN115,Kensignton Private Equity,20.56,8,1.65,High,Growth,Semi-Annual,Small / Medium Cap,Alternative,2017-11-20,2017-11-20
+NEC442,Next Edge Private Debt,10.09,8,1,High,Income/Growth,Quarterly,Alternative Yield,Alternative,2017-11-21,2017-11-21
+MCC552,Next Edge Victory Park,10,8,1.25,High,Income/Growth,Quarterly,Alternative Yield,Alternative,2017-11-22,2017-11-22
+DYN2226,Dynamic Alternative Yield Fund,10.22,6.1,1.25,Medium,Income(50)/Growth(50),Monthly,Alternative Yield,Alternative,2017-11-23,2017-11-23
+DYN1753,Dynamic Credit Absolute Return Fund,5.28,4.9,0.85,High,Income/Growth,Monthly,Alternative Yield,Alternative,2017-11-24,2017-11-24
+TML3784,Franklin Quot Bal Income Port,9.34,0.51,0.84,Low,Income(50)/Growth(50),Annually,Blend Strategy,Fixed Income,2017-11-25,2017-11-25
+QWE811,Productivity Media,10.14,0,0.5,High,Income(50)/Growth(50),None,Alternative Total Return,Alternative,2017-11-26,2017-11-26
