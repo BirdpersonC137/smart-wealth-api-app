@@ -70,7 +70,7 @@ class InvestmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def investment_params
-      params.require(:investment).permit(:ticker, :name, :price, :yield, :MER, :risk_category, :objective, :distribution, :style, :term)
+      params.require(:investment).permit(:ticker, :name, :price, :yield, :mer, :risk_category, :objective, :distribution, :style, :typeof)
     end
   
     def sort_column
