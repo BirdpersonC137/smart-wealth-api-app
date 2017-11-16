@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112213445) do
+ActiveRecord::Schema.define(version: 20171116033544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "investment_portfolios", force: :cascade do |t|
+    t.bigint "investment_id"
+    t.bigint "portfolio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["investment_id"], name: "index_investment_portfolios_on_investment_id"
+    t.index ["portfolio_id"], name: "index_investment_portfolios_on_portfolio_id"
+  end
 
   create_table "investments", force: :cascade do |t|
     t.string "ticker"
@@ -28,6 +37,20 @@ ActiveRecord::Schema.define(version: 20171112213445) do
     t.string "typeof"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "cad_equity"
+    t.float "us_equity"
+    t.float "int_equity"
+    t.float "emerging_equity"
+    t.float "alternatives"
+    t.float "cad_fixed_income"
+    t.float "int_fixed_income"
+    t.float "cash"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,4 +83,6 @@ ActiveRecord::Schema.define(version: 20171112213445) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "investment_portfolios", "investments"
+  add_foreign_key "investment_portfolios", "portfolios"
 end

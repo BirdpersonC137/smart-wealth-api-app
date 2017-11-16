@@ -1,0 +1,13 @@
+<%= simple_form_for(@portfolio, local: true) do |form| %>
+    <%= form.input :name %>
+    <%= form.input :cad_equity %>
+    <%= form.input :us_equity %>
+    <%= form.input :int_equity %>
+    <%= form.input :emerging_equity %>
+    <%= form.input :alternatives %>
+    <%= form.input :cad_fixed_income %>
+    <%= form.input :int_fixed_income %>
+    <%= form.input :cash %>
+    <%= form.submit class: 'btn btn-primary'%>
+  </div>
+<% end %>

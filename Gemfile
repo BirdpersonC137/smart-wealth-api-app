@@ -40,6 +40,7 @@ gem 'chosen-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'webpack-rails'
+gem 'simple_form'
 ########################DATAGEN####################
 gem 'faker', github: 'stympy/faker'
 
@@ -94,5 +95,4 @@ gem 'active_model_serializers'
 
 ##################STOCKS#######################
 gem 'stock_quote', '~> 1.2', '>= 1.2.3'
-gem 'foreman'
 #################SEARCH#######################

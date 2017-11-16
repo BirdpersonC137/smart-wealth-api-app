@@ -1,4 +1,7 @@
 class Investment < ApplicationRecord
+  has_many :investment_portfolios, dependent: :nullify
+  has_many :portfolios, through: :investment_portfolios
+
     def self.search(search)
         if search
           where('objective ILIKE ? OR risk_category ILIKE ? OR name ILIKE ? OR style ILIKE? OR distribution ILIKE?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%").order('id DESC')
