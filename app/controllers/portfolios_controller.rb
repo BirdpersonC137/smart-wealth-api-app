@@ -1,10 +1,11 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
+  
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.order(name: :desc)
   end
 
   # GET /portfolios/1
@@ -69,6 +70,13 @@ class PortfoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params.require(:portfolio).permit(:name, :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash)
+      params.require(:portfolio).permit(:name, :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash, {investment_ids:[]})
+    end
+    def sort_column
+      Portfolio.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

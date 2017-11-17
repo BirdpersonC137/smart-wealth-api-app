@@ -1,10 +1,39 @@
-<p id="notice"><%= notice %></p>
-<%= @portfolio.name %>
-<%= @portfolio.cad_equity %>
-<%= @portfolio.int_equity %>
-<%= @portfolio.emerging_equity %>
-<%= @portfolio.alternatives %>
-<%= @portfolio.cad_fixed_income %>
-<%= @portfolio.int_fixed_income %>
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+<section class="container">
+    <p id="notice"><%= notice %></p>
+    <h2><%= @portfolio.name %></h2>
+
+    <h4><%= @portfolio.name %> asset allocation</h4>
+    <div class="col-6">
+       <div class="d-flex justify-space-between row">
+            <div class="col-8 p-0"><strong>Canadian Equity:</strong></div>
+            <div class="col-4 p-0 d-flex justify-content-end"><%= number_to_percentage(@portfolio.cad_equity)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8 p-0"><strong>US equity:</strong></div>
+            <div class="col-4 p-0 d-flex justify-content-end"><%= number_to_percentage(@portfolio.us_equity)%></div>
+
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8 p-0"><strong>International Equity:</strong></div>
+            <div class="col-4 p-0 d-flex justify-content-end"><%= number_to_percentage(@portfolio.int_equity)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8 p-0"><strong>Emerging Equity:</strong></div>
+            <div class="col-4 p-0 d-flex justify-content-end"><%= number_to_percentage(@portfolio.emerging_equity)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8 p-0"><strong>Alternative:</strong></div>
+            <div class="col-4 p-0 d-flex justify-content-end"><%= number_to_percentage(@portfolio.alternatives)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8 p-0"><strong>Canadian Fixed Income:</strong></div>
+            <div class="col-4 p-0 d-flex justify-content-end"><%= number_to_percentage(@portfolio.cad_fixed_income)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8 p-0"><strong>International Fixed Income:</strong></div>
+            <div class="col-4 p-0 d-flex justify-content-end"><%= number_to_percentage(@portfolio.int_fixed_income)%></div>
+       </div>
+            <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+            <%= link_to 'Back', portfolios_path %>
+    </div>
+</section>

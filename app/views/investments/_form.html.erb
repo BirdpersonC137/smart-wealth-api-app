@@ -1,66 +1,13 @@
-<%= form_with(model: investment, local: true) do |form| %>
-  <% if investment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(investment.errors.count, "error") %> prohibited this investment from being saved:</h2>
-
-      <ul>
-      <% investment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :ticker %>
-    <%= form.text_field :ticker, id: :investment_ticker %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :investment_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :investment_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :yield %>
-    <%= form.text_field :yield, id: :investment_yield %>
-  </div>
-
-  <div class="field">
-    <%= form.label :MER %>
-    <%= form.text_field :MER, id: :investment_mer %>
-  </div>
-
-  <div class="field">
-    <%= form.label :risk_category %>
-    <%= form.text_field :risk_category, id: :investment_risk_category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :objective %>
-    <%= form.text_field :objective, id: :investment_objective %>
-  </div>
-
-  <div class="field">
-    <%= form.label :distribution %>
-    <%= form.text_field :distribution, id: :investment_distribution %>
-  </div>
-
-  <div class="field">
-    <%= form.label :style %>
-    <%= form.text_field :style, id: :investment_style %>
-  </div>
-
-  <div class="field">
-    <%= form.label :typeof %>
-    <%= form.text_field :typeof, id: :typeof %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= simple_form_for(@investment, local: true) do |form| %>
+    <%= form.input :ticker, id: :investment_ticker %>
+    <%= form.input :name, id: :investment_name %>
+    <%= form.input :price, id: :investment_price %>
+    <%= form.input :yield, id: :investment_yield %>
+    <%= form.input :mer, id: :investment_mer %>
+    <%= form.input :risk_category, id: :investment_risk_category %>
+    <%= form.input :objective, id: :investment_objective %>
+    <%= form.input :distribution, id: :investment_distribution %>
+    <%= form.input :style, id: :investment_style %>
+    <%= form.input :typeof, id: :typeof %>
+    <%= form.submit class: 'btn btn-primary'%>
 <% end %>

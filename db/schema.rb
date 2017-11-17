@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116033544) do
+ActiveRecord::Schema.define(version: 20171117032519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171116033544) do
     t.bigint "portfolio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "weight"
     t.index ["investment_id"], name: "index_investment_portfolios_on_investment_id"
     t.index ["portfolio_id"], name: "index_investment_portfolios_on_portfolio_id"
   end
