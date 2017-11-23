@@ -11,8 +11,24 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery-ui
+//= require jquery-ui/core
+//= require jquery-ui/widget
+//= require jquery-ui/position
+//= require jquery-ui/widgets/mouse
+//= require jquery-ui/widgets/draggable
+//= require jquery-ui/widgets/droppable
+//= require jquery-ui/widgets/resizable
+//= require jquery-ui/widgets/selectable
+//= require jquery-ui/widgets/sortable
+//= require jquery-ui/effect.all
 //= require chosen-jquery
 //= require popper
+//= require cocoon
 //= require bootstrap
+//= require chartkick
 //= require rails-ujs
 //= require_tree .
+document.addEventListener("turbolinks:load", function() {
+    alert("ok!")
+   });

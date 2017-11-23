@@ -13,6 +13,7 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+gem 'activeadmin'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -37,10 +38,14 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'chosen-rails'
+gem 'jquery-ui-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'webpack-rails'
 gem 'simple_form'
+gem 'cocoon'
+gem "animate-rails"
+
 ########################DATAGEN####################
 gem 'faker', github: 'stympy/faker'
 
@@ -66,6 +71,7 @@ group :development do
   gem 'pry-rails' #a gem that integrates pry with rails seemlessly
   gem 'hirb'
   gem 'letter_opener'
+  gem 'rails-erd', require: false, group: :development
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -89,10 +95,8 @@ gem 'groupdate'
 ##################PAGINATION###################
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
-
 #####################API#######################
 gem 'active_model_serializers'
-
 ##################STOCKS#######################
 gem 'stock_quote', '~> 1.2', '>= 1.2.3'
 #################SEARCH#######################

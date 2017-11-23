@@ -54,3 +54,4 @@ puts "There are now #{Investment.count} rows in the transactions table"
 # :distribution, 
 # :style, 
 # :typeof)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

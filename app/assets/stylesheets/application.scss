@@ -11,23 +11,91 @@
  * It is generally better to create a new file per style scope.
  *
  *= require font-awesome
+ *= require animate
+ *= require jquery-ui
+ *= require jquery-ui/core
+ *= require jquery-ui/theme
+ *= require jquery-ui/draggable
+ *= require jquery-ui/resizable
+ *= require jquery-ui/selectable
+ *= require jquery-ui/sortable
+ *= require jquery-ui/accordion
+ *= require jquery-ui/autocomplete
+ *= require jquery-ui/button
+ *= require jquery-ui/datepicker
+ *= require jquery-ui/dialog
+ *= require jquery-ui/menu
+ *= require jquery-ui/progressbar
+ *= require jquery-ui/selectmenu
+ *= require jquery-ui/slider
+ *= require jquery-ui/spinner
+ *= require jquery-ui/tabs
+ *= require jquery-ui/tooltip
+ *= stub active_admin
  *= require_tree .
  *= require_self
  *= require chosen
  */
  @import "bootstrap";
  @import "font-awesome";
- 
+ @import url('https://fonts.googleapis.com/css?family=Rambla');
+*{
+  font-family: 'Rambla', sans-serif;
+}
+.header-jumbo-home{
+  background-color:#ffffff; 
+}
  .pretty th .current {
     padding-right: 12px;
     background-repeat: no-repeat;
     background-position: right center;
   }
-  
+
   .pretty th .asc {
     background-image: url(/images/up_arrow.gif);
   }
   
   .pretty th .desc {
     background-image: url(/images/down_arrow.gif);
+  }
+
+
+  .jumbo-p{
+    visibility: hidden;
+  }
+  
+  .navbar > a {
+    text-decoration: none;
+    color:black;
+  }
+  .nav-link{
+    text-decoration: none;
+    color:black;
+  }
+  .nav-link:hover{
+    text-decoration: none;
+    color:orange;
+  }
+  .active{
+    text-decoration: none;
+    color:orange;
+  }
+  
+  #custom-handle1 {
+    width: 1.5em;
+    height: 1.6em;
+    border-radius: 100%;        
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+  #custom-handle2 {
+    width: 1.5em;
+    height: 1.6em;
+    border-radius: 100%;        
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
   }

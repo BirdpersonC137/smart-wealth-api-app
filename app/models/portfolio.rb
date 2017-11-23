@@ -4,6 +4,7 @@ class Portfolio < ApplicationRecord
     validate :over_100
     validates_numericality_of :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash
     validates_presence_of :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash
+    
     validates(:name,{
         uniqueness: true
     })
