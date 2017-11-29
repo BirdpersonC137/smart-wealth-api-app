@@ -26,7 +26,6 @@ gem 'redis', '~> 3.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-
 ######################AUTH########################
 gem 'devise'
 gem 'cancancan', '~> 2.0'
@@ -39,6 +38,8 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'chosen-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'webpack-rails'
@@ -83,14 +84,18 @@ gem "delayed_job_web"
 
 ####################CLOUD######################
 gem 'fog-aws'
-
+gem "reform"
+gem "reform-rails"
 ####################PICTURES###################
 gem "mini_magick"
 gem 'carrierwave', '~> 1.0.0'
-
+gem 'rails-assets-tether'
 ####################CHARTS#####################
 gem "chartkick"
 gem 'groupdate'
+gem 'chartjs-ror'
+gem 'momentjs-rails'
+gem 'react-rails'
 
 ##################PAGINATION###################
 gem 'kaminari'

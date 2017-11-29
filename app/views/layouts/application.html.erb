@@ -7,16 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag "//www.google.com/jsapi" %>
     <%= javascript_include_tag 'application', 'chartkick' %>
+    <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
-
+  
   <div>
   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand title" href="/">SmartWealth</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <a class="navbar-nav ml-auto">
         <a class="nav-item nav-link <%= 'active' if current_page?(investments_path) %>" href=<%=investments_path%>>Investments</a>
@@ -36,6 +35,7 @@
  </div>
   <div class="container-fluid">
     <%= yield %>
+    <%= yield :charts_js %>
   </div>
   </body>
 </html>
