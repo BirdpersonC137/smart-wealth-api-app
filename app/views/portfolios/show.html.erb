@@ -3,6 +3,7 @@
     <h2><%= @portfolio.name %></h2>
 
     <h4><%= @portfolio.name %> asset allocation</h4>
+    <div class="row">
     <div class="col-6">
        <div class="d-flex justify-space-between row">
             <div class="col-8 p-0"><strong>Canadian Equity:</strong></div>
@@ -35,7 +36,10 @@
        </div>
             <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
             <%= link_to 'Back', portfolios_path %>
+       
     </div>
-    <%= pie_chart [["Canadian Equity", @portfolio.cad_equity], ["US Equity", @portfolio.us_equity], ["International Equity", @portfolio.int_equity], ["Emerging Equity", @portfolio.emerging_equity], ["Alternatives", @portfolio.alternatives], ["Canadian Fixed Income", @portfolio.cad_fixed_income], ["International", @portfolio.int_fixed_income], ["Cash", @portfolio.cash]],id: "users-chart", width: "1000px", height: "700px" %>
-
+    <div class="canvas col-6">
+        <%= pie_chart [["Canadian Equity", @portfolio.cad_equity], ["US Equity", @portfolio.us_equity], ["International Equity", @portfolio.int_equity], ["Emerging Equity", @portfolio.emerging_equity], ["Alternatives", @portfolio.alternatives], ["Canadian Fixed Income", @portfolio.cad_fixed_income], ["International", @portfolio.int_fixed_income], ["Cash", @portfolio.cash]],library: {legend: {position: "right"}}%>
+    </div>
+    </div>
 </section>
