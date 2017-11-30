@@ -1,0 +1,29 @@
+<%= form_with(model: account, local: true) do |form| %>
+  <% if account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <label class="btn btn-primary"> <%= form.radio_button :name,  "RESP" %> RESP </label>
+  <label class="btn btn-primary"> <%= form.radio_button :name, "RRSP" %> RRSP </label>
+  <label class="btn btn-primary"> <%= form.radio_button  :name, "TFSA" %>  TFSA </label>
+  <label class="btn btn-primary"> <%= form.radio_button :name, "Direct Investing" %> Direct Investing </label>
+  </div>
+  <div class="field">
+    <%= form.label :account_type_id %>
+    <%= form.collection_select :account_type_id, AccountType.order(:name),:id,:name, include_blank: true %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

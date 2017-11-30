@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  resources :survey_answers
-  resources :survey_questions
-  resources :risk_assessments
-  get 'questions/destroy'
 
-  # resources :choices, only: [:destroy]
-  # resources :questions, only: [:destroy]
-  # resources :surveys do
-  #   # end
+  resources :user_accounts
+  resources :accounts
+  resources :account_types
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :portfolios
