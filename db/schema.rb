@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129185714) do
+ActiveRecord::Schema.define(version: 20171130204320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.bigint "account_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_type_id"], name: "index_accounts_on_account_type_id"
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -110,6 +124,19 @@ ActiveRecord::Schema.define(version: 20171129185714) do
     t.index ["risk_assessment_id"], name: "index_survey_questions_on_risk_assessment_id"
   end
 
+  create_table "user_accounts", force: :cascade do |t|
+    t.string "goal"
+    t.float "financial_goal"
+    t.bigint "account_id"
+    t.float "annual_income"
+    t.float "fin_assets"
+    t.float "non_fin_assets"
+    t.float "liabilities"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_user_accounts_on_account_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -140,9 +167,11 @@ ActiveRecord::Schema.define(version: 20171129185714) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "accounts", "account_types"
   add_foreign_key "investment_portfolios", "investments"
   add_foreign_key "investment_portfolios", "portfolios"
   add_foreign_key "survey_answers", "survey_questions"
   add_foreign_key "survey_answers", "users"
   add_foreign_key "survey_questions", "risk_assessments"
+  add_foreign_key "user_accounts", "accounts"
 end

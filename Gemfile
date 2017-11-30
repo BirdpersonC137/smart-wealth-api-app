@@ -42,11 +42,10 @@ gem 'jquery-turbolinks'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'webpack-rails'
 gem 'simple_form'
 gem 'cocoon'
 gem "animate-rails"
-
+gem 'wicked'
 ########################DATAGEN####################
 gem 'faker', github: 'stympy/faker'
 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Goal:</strong>
+  <%= @user_account.goal %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @user_account.account %>
+</p>
+
+<p>
+  <strong>Annual income:</strong>
+  <%= @user_account.annual_income %>
+</p>
+
+<p>
+  <strong>Fin assets:</strong>
+  <%= @user_account.fin_assets %>
+</p>
+
+<p>
+  <strong>Non fin assets:</strong>
+  <%= @user_account.non_fin_assets %>
+</p>
+
+<%= link_to 'Edit', edit_user_account_path(@user_account) %> |
+<%= link_to 'Back', user_accounts_path %>
