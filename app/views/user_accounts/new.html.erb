@@ -1,5 +1,74 @@
-<h1>New User Account</h1>
+<div class="container col-8">
+<%= form_for @user_account do |form| %>
+<div id="msform">
 
-<%= render 'form', user_account: @user_account %>
+<fieldset>
+ <h2>Tell us about your investment goals</h2>
+    <div class="field mt-5">
+            <div class="btn-group-lg d-flex justify-content-center" data-toggle="buttons">  
+                <div class="col-12">  
+                <div class="row ws-group">
+                    <div class="col-4"> <div class="btn card goals col-12"><%= form.radio_button :goal,  "Build Wealth" %><i class="fa fa-line-chart fa-3x" aria-hidden="true"></i>Build Wealth</div></div>
+                    <div class="col-4"> <div class="btn card goals col-12"><%= form.radio_button :goal, "Save for retirement" %><i class="fa fa-money fa-3x" aria-hidden="true"></i>Save for retirement </div></div>
+                    <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button  :goal, "Generate income" %><i class="fa fa-university fa-3x" aria-hidden="true"></i>Generate Income </div></div>
+                </div>
+                <div class="row ws-group mt-5">
+                    <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button :goal, "Save for education" %> <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>Save for education </div></div>
+                    <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button :goal, "Save for the sake of saving" %> <i class="fa fa-usd fa-3x" aria-hidden="true"></i>Save for the sake of saving </div></div>
+                    <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button :goal, "Save for something specific" %><i class="fa fa-home fa-3x" aria-hidden="true"></i>Save for something specific </div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ml-4">
+        <div>
+            <h3>Financial Goal</h3>
+        </div>
+        <div class="field">
+            <%= form.text_field :financial_goal, id: :user_account_financial_goal %>
+        </div>
+    </div>
+  </fieldset>
+<fieldset>
+    <h2>Select your account type</h2>
+    <div class="col-12">
+    <div class="row">
+    </div>
+    <div class="row">
+    <% Account.all.each do |a| %>
+    <div class="field">
+      <label class="btn btn-primary"> <%= form.radio_button :account_id, a.id %><%= form.label :account, a.name %>
+    </label>
+    </div>
+    <% end %>
+    </div>
+    </div>
+  </fieldset>
+  <fieldset>
+  <div class="field">
+    <%= form.label "Annual Income" %>
+    <%= form.number_field :annual_income, id: :user_account_annual_income %>
+  </div>
 
-<%= link_to 'Back', user_accounts_path %>
+  <div class="field">
+    <%= form.label 'Financial Assets' %>
+    <%= form.number_field :fin_assets, id: :user_account_fin_assets %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Non-Financial Assets" %>
+    <%= form.number_field :non_fin_assets, id: :user_account_non_fin_assets %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Liabilities"%>
+    <%= form.number_field :liabilities, id: :user_account_liabilities %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</fieldset>
+</div>
+
+<% end %>
+</div>

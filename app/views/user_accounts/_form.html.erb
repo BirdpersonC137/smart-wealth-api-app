@@ -10,33 +10,60 @@
       </ul>
     </div>
   <% end %>
-
+ <div class="fieldset">
   <div class="field">
     <%= form.label :goal %>
-    <%= form.text_field :goal, id: :user_account_goal %>
+      <div class="btn-group-lg d-flex" data-toggle="buttons">  
+      <div class="col-12">  
+      <div class="row ws-group">
+      <div class="btn card goals col-3"> <%= form.radio_button :goal,  "Build Wealth" %> <i class="fa fa-line-chart fa-3x" aria-hidden="true"></i>
+ <div>Build Wealth</div> </div>
+      <div class="btn card goals col-3"> <%= form.radio_button :goal, "Save for retirement" %> Save for retirement </div>
+      <div class="btn card goals col-3"> <%= form.radio_button  :goal, "Generate income" %>  Generate Income </div>
+      </div>
+      <div class="row ws-group mt-5">
+      <div class="btn card goals col-3"> <%= form.radio_button :goal, "Save for education" %> <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>
+Save for education </div>
+      <div class="btn card goals col-3"> <%= form.radio_button :goal, "Save for the sake of saving" %> <i class="fa fa-usd fa-3x" aria-hidden="true"></i>
+Save for the sake of saving </div>
+      <div class="btn card goals col-3"> <%= form.radio_button :goal, "Save for something specific" %><i class="fa fa-home fa-3x" aria-hidden="true"></i>
+
+ Save for something specific </div>
+      </div>
+      </div>
   </div>
-  <% Account.all.each do |a| %>
-    <%= form.radio_button :account, a.id %>
-    <%= form.label :account, a.name %>
-  <% end %>
   <div class="field">
-    <%= form.label :account_id %>
-    <%= form.text_field :account_id, id: :user_account_account_id %>
+    <%= form.label "Financial Goal" %>
+    <%= form.number_field :financial_goal, id: :user_account_financial_goal %>
+  </div>
+  </div>
+  </div>
+  <div class=fieldset>
+    <% Account.all.each do |a| %>
+    <div class="field">
+      <label class="btn btn-primary"> <%= form.radio_button :account_id, a.id %><%= form.label :account, a.name %>
+    </label>
+    </div>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= form.label "Annual Income" %>
+    <%= form.number_field :annual_income, id: :user_account_annual_income %>
   </div>
 
   <div class="field">
-    <%= form.label :annual_income %>
-    <%= form.text_field :annual_income, id: :user_account_annual_income %>
+    <%= form.label 'Financial Assets' %>
+    <%= form.number_field :fin_assets, id: :user_account_fin_assets %>
   </div>
 
   <div class="field">
-    <%= form.label :fin_assets %>
-    <%= form.text_field :fin_assets, id: :user_account_fin_assets %>
+    <%= form.label "Non-Financial Assets" %>
+    <%= form.number_field :non_fin_assets, id: :user_account_non_fin_assets %>
   </div>
 
   <div class="field">
-    <%= form.label :non_fin_assets %>
-    <%= form.text_field :non_fin_assets, id: :user_account_non_fin_assets %>
+    <%= form.label "Liabilities"%>
+    <%= form.number_field :liabilities, id: :user_account_liabilities %>
   </div>
   <div class="actions">
     <%= form.submit %>
