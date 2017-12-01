@@ -4,6 +4,7 @@ class UserAccountsController < InheritedResources::Base
   end
   def create
     @user_account = UserAccount.new user_account_params
+    @user_account.user = current_user
     if @user_account.save
       redirect_to portfolios_path
     else
@@ -13,7 +14,7 @@ class UserAccountsController < InheritedResources::Base
   private
 
     def user_account_params
-      params.require(:user_account).permit(:goal,:financial_goal, :account_id, :annual_income, :fin_assets, :non_fin_assets, :liabilities)
+      params.require(:user_account).permit(:goal,:financial_goal, :account_id, :annual_income, :fin_assets, :non_fin_assets, :liabilities, :user_id)
     end
 end
 
