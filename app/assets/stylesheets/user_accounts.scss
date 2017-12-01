@@ -1,3 +1,28 @@
 // Place all the styles related to the user_accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.goals > input[type="radio"]{
+    display: none;
+}
+div.active{
+    background-color:#F78D3F !important;
+    color: #E8EDE0 !important;
+}
+.goals{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+.goals:hover{
+    background-color: #2BBBD8 !important;
+    color: #E8EDE0 !important;    
+}
+.goals div:not(:first-child){
+    padding-left: 20px;
+}
+.ws-group{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
