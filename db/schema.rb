@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203064110) do
+ActiveRecord::Schema.define(version: 20171203205952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,15 @@ ActiveRecord::Schema.define(version: 20171203064110) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "portfolio_strategies", force: :cascade do |t|
+    t.bigint "portfolio_id"
+    t.bigint "strategy_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id"], name: "index_portfolio_strategies_on_portfolio_id"
+    t.index ["strategy_id"], name: "index_portfolio_strategies_on_strategy_id"
+  end
+
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -101,6 +110,12 @@ ActiveRecord::Schema.define(version: 20171203064110) do
 
   create_table "risk_assessments", force: :cascade do |t|
     t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "strategies", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -181,6 +196,8 @@ ActiveRecord::Schema.define(version: 20171203064110) do
   add_foreign_key "accounts", "account_types"
   add_foreign_key "investment_portfolios", "investments"
   add_foreign_key "investment_portfolios", "portfolios"
+  add_foreign_key "portfolio_strategies", "portfolios"
+  add_foreign_key "portfolio_strategies", "strategies"
   add_foreign_key "survey_answers", "survey_questions"
   add_foreign_key "survey_answers", "users"
   add_foreign_key "survey_questions", "risk_assessments"

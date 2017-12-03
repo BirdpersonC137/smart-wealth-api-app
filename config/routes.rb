@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :strategies
   resources :user_accounts
   resources :accounts
-  resources :account_types
+  resources :account_types, only: [:create]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :portfolios
