@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= stub active_admin
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  *= require chosen
@@ -280,4 +281,16 @@ body{
     }
   
   }
+  .ui-datepicker .ui-widget-header,
+  .ui-datepicker .ui-datepicker-header {
+      background: #52accc;
+  }
   
+  .ui-datepicker thead {
+      background: #4796b3;
+  }
+  
+  .ui-datepicker td .ui-state-hover {
+      background: #096484;
+      color: #fff;
+  }
