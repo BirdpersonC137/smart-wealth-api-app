@@ -14,7 +14,14 @@ class UserAccountsController < InheritedResources::Base
   private
 
     def user_account_params
-      params.require(:user_account).permit(:goal,:financial_goal, :account_id, :annual_income, :fin_assets, :non_fin_assets, :liabilities, :user_id)
+      params.require(:user_account).permit(:goal,:financial_goal, :account_id, 
+                                                 :annual_income, 
+                                                 :fin_assets, 
+                                                 :non_fin_assets, 
+                                                 :liabilities, :user_id, 
+                                                 :withdrawals, 
+                                                 :inc_stability, 
+                                                 :time_horizon)
     end
 end
 

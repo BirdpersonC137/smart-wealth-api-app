@@ -43,6 +43,7 @@ gem 'jquery-turbolinks'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'bootstrap-datepicker-rails'
 gem 'cocoon'
 gem "animate-rails"
 gem 'wicked'

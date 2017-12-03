@@ -1,5 +1,5 @@
-<div class="container col-8">
-<%= form_for @user_account do |form| %>
+<div class="container col-lg-11 col-sm-12 col-md-12 mt-3">
+<%= simple_form_for @user_account do |form| %>
 <div id="msform">
 
 <fieldset>
@@ -14,60 +14,50 @@
                 </div>
                 <div class="row ws-group mt-5">
                     <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button :goal, "Save for education" %> <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>Save for education </div></div>
-                    <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button :goal, "Save for the sake of saving" %> <i class="fa fa-usd fa-3x" aria-hidden="true"></i>Save for the sake of saving </div></div>
+                    <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button :goal, "Estate (generation transfer)" %> <i class="fa fa-usd fa-3x" aria-hidden="true"></i>Save for the sake of saving </div></div>
                     <div class="col-4"><div class="btn card goals col-12"><%= form.radio_button :goal, "Save for something specific" %><i class="fa fa-home fa-3x" aria-hidden="true"></i>Save for something specific </div></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="ml-4">
+    <div class="ml-1">
         <div>
-            <h3>Financial Goal</h3>
         </div>
-        <div class="field">
-            <%= form.text_field :financial_goal, id: :user_account_financial_goal %>
+        <div class="field col-5">
+            <%= form.input :financial_goal,label: "Target amount", class:"form-control" %>
         </div>
     </div>
   </fieldset>
-<fieldset>
+<fieldset class="pl-3">
     <h2>Select your account type</h2>
     <div class="col-12">
     <div class="row">
     </div>
     <div class="row">
+    <div class="d-flex flex-column">
     <% Account.all.each do |a| %>
     <div class="field">
-      <label class="btn btn-primary"> <%= form.radio_button :account_id, a.id %><%= form.label :account, a.name %>
+      <label class="btn btn-primary"><%= form.radio_button :account_id, a.id %>  <%= form.label :account, a.name, class: "pl-2" %>
     </label>
     </div>
     <% end %>
     </div>
     </div>
+    </div>
   </fieldset>
-  <fieldset>
-  <div class="field">
-    <%= form.label "Annual Income" %>
-    <%= form.number_field :annual_income, id: :user_account_annual_income %>
-  </div>
+  <fieldset class="col-5">
+    <%= form.input :annual_income, id: :user_account_annual_income,label: "What best describes your annual household gross income from all sources?", :collection =>[['under $50,000', 0],['$50,000 to $ $100,000', 2], ['$100,000 - $250,000', 4], ['$250,000-$500,000', 6], ['$500,000+', 8]] %>
+    <%= form.input :inc_stability, id: :user_account_inc_stability, label:'How stable are your current and future income sources?', :collection => [['Unstable', 0],['Somewhat stable', 4], ['Stable', 8]] %>
+    <%= form.input :fin_assets, id: :user_account_fin_assets, label: 'Liquid Assets (Cash, Stocks)',:collection => [['under $50,000', 2],['$50,000 to $ $100,000', 4], ['$100,000 - $500,000', 6], ['$500,000 - $1,000,000', 8], ['$1,000,000+', 10]] %>
+    <%= form.input :non_fin_assets, id: :user_account_non_fin_assets, label: 'Fixed Assets(Buildings/Land)', :collection => [['under $50,000', 2],['$50,000 to $ $100,000', 4], ['$100,000 - $500,000', 6], ['$500,000 - $1,000,000', 8], ['$1,000,000+', 10]] %>
+    <%= form.input :liabilities, id: :user_account_liabilities, label:'Liabilities(Debts/Loans)', :collection => [['under $50,000', 8],['$50,000 to $ $100,000', 6], ['$100,000 - $500,000', 4], ['$500,000 - $1,000,000', 2], ['$1,000,000+', 0]] %>
+    <%= form.input :time_horizon, id: :user_account_time_horizon, label:'Time Horizon(How long are you planning to invest for)', :collection => [['Short-term(less than 3 years)', 2],['Medium-term(3-7 years)', 4], ['Long-term(Over 7 years)', 6]] %>
+    <%= form.input :withdrawals, id: :user_account_withdrawals, label:'Do you plan on making significant withdrawal (at least 25% of the portfolio value) from your investments?', :collection => [['Yes, within the next 18 month', 0],['Yes, within the next 2 to 5 years', 2], ['Yes, within the next 5 to 10 years', 4], ['Yes, within the next 10 to 15 years', 6], ['No significant withdrawals are planned', 8]] %>
 
-  <div class="field">
-    <%= form.label 'Financial Assets' %>
-    <%= form.number_field :fin_assets, id: :user_account_fin_assets %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Non-Financial Assets" %>
-    <%= form.number_field :non_fin_assets, id: :user_account_non_fin_assets %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Liabilities"%>
-    <%= form.number_field :liabilities, id: :user_account_liabilities %>
-  </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary btn-raised" %>
   </div>
-</fieldset>
+  </fieldset>
 </div>
 
 <% end %>
