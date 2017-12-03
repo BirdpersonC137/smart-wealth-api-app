@@ -12,7 +12,7 @@
 //
 //= require jquery_ujs
 //= require jquery3
-//= require bootstrap-datepicker
+//= require jquery-ui
 //= require rails-ujs
 //= require chosen-jquery
 //= require popper
@@ -23,6 +23,6 @@
 //= require_tree .
 $(document).ready(function() {        
 $(function() {
-    $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+    $('input.datepicker').data({behaviour: "datepicker"}).datepicker({changeMonth: true, changeYear: true, dateFormat: 'd MM yy', minDate: '-118y', yearRange: "1900:+nn"});
 });
 })
