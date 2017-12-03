@@ -262,9 +262,15 @@ body{
   /* If you don't want the footer to be responsive, remove these media queries */
   
   @media (max-width: 880px) {
-  
+    body {
+      min-height:100%; 
+      position:relative; 
+      padding-bottom:600px; 
+    }
     .footer-distributed{
       font: bold 14px sans-serif;
+      background-size: cover;
+      height:600px;       
     }
   
     .footer-distributed .footer-left,
@@ -273,7 +279,6 @@ body{
       display: block;
       width: 100%;
       margin-bottom: 40px;
-      text-align: center;
     }
   
     .footer-distributed .footer-center i{

@@ -5,8 +5,8 @@ class UserAccount < ApplicationRecord
   validates(:financial_goal, numericality:{
     greater_than_or_equal_to: 0
 })
-  after_save :assign_risk_profile_to_user
   before_save :user_age_factor
+  after_save :assign_risk_profile_to_user
   private
   def user_age_factor
     @user = self.user
@@ -23,15 +23,37 @@ class UserAccount < ApplicationRecord
     end
   end
   def assign_risk_profile_to_user
-    @user = self.user    
-    if [self.liabilities, self.fin_assets, self.non_fin_assets, self.annual_income].sum < 15
-      @user.risk_profile = "test"
-      @user.save
-    elsif self.financial_goal < 5000
+    @user = self.user
+    @ipq = [self.liabilities, self.fin_assets, self.non_fin_assets, self.annual_income, self.age_factor, self.time_horizon, self.withdrawals, self.inc_stability].sum
+    if @ipq < 14
       @user.risk_profile = "Low Risk Tolerance"
+      @user.inv_objective = 'Defensive'
+      @user.strategy = 'POC'      
+      @user.IPQ = @ipq
       @user.save
-    elsif self.financial_goal == 5000
-      @user.risk_profile = "Medium Risk Tolerance"
+    elsif @ipq < 26
+      @user.risk_profile = "Low to Medium"
+      @user.inv_objective = 'Income' 
+      @user.strategy = 'CG'     
+      @user.IPQ = @ipq
+      @user.save
+    elsif @ipq < 38
+      @user.risk_profile = "Medium"
+      @user.inv_objective = 'Balanced Balanced'
+      @user.strategy = 'Balanced Growth'
+      @user.IPQ = @ipq
+      @user.save
+    elsif @ipq < 50
+      @user.risk_profile = "Medium to High"
+      @user.inv_objective = 'Growth'
+      @user.strategy = 'Aggressive Growth'
+      @user.IPQ = @ipq
+      @user.save
+    else
+      @user.risk_profile = "High"
+      @user.inv_objective = 'Growth'
+      @user.strategy = 'Alpha'
+      @user.IPQ = @ipq
       @user.save
     end
   end
