@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201193735) do
+ActiveRecord::Schema.define(version: 20171203004227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,6 +135,9 @@ ActiveRecord::Schema.define(version: 20171201193735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.float "inc_stability"
+    t.float "withdrawals"
+    t.float "time_horizon"
     t.index ["account_id"], name: "index_user_accounts_on_account_id"
     t.index ["user_id"], name: "index_user_accounts_on_user_id"
   end
@@ -142,7 +145,7 @@ ActiveRecord::Schema.define(version: 20171201193735) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.datetime "date_of_birth"
+    t.string "date_of_birth"
     t.string "sex"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -164,6 +167,9 @@ ActiveRecord::Schema.define(version: 20171201193735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "risk_profile"
+    t.string "ability_to_assume_risk"
+    t.string "strategy"
+    t.decimal "IPQ"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -8,7 +8,6 @@ $( "#msg" ).addClass('animated').delay( 1000 ).queue(function(next){
 ////////////////////SLIDERS FOR FRONT PAGE IF THERE IS TIME//////////////////////////
 // var contribution;
 // var arr = []
-// var presentValue;
 // $( function() {
 //     $( "#slider-range-min" ).slider({
 //       range: "min",
