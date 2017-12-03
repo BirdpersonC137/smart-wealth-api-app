@@ -1,0 +1,5 @@
+class AddInvestorObjectiveToUsers < ActiveRecord::Migration[5.1]
+  def change
+    add_column :users, :inv_objective, :string
+  end
+end

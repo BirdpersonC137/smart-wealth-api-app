@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :date_of_birth, as: :string, :input_html => { value: Date.today - 18.years, class: 'datepicker '} %>
+    <%= f.input :date_of_birth, as: :string, :input_html => {class: 'datepicker'} %>
     <%= f.input :email, autofocus: true, placeholder: 'billgates@microsoft.com'  %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
