@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :user_accounts, dependent: :destroy
   has_many :accounts
   delegate :user_account, to: :user
+  has_many :strategies, through: :user_accounts
   before_save :assign_age
   private
     def assign_age

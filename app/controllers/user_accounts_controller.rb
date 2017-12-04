@@ -21,7 +21,7 @@ class UserAccountsController < InheritedResources::Base
                                                  :liabilities, :user_id, 
                                                  :withdrawals, 
                                                  :inc_stability, 
-                                                 :time_horizon)
+                                                 :time_horizon, :strategy_id)
     end
 end
 
