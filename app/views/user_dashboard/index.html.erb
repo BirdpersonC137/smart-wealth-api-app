@@ -1,0 +1,28 @@
+<%= @user.first_name %> <%= @user.last_name %>
+Strategy: <%= @user.inv_objective %> portfolio
+<table class="table table-bordered table-striped">
+<thead>
+    <tr>
+        <th> Account </th>
+        <th> Current Value </th>
+        <th> Growth </th>
+        <th> Currency </th>
+    </tr>
+</thead>
+<tbody>
+<% @user_accounts.each do |user_account| %>
+    <tr>
+        <td><%= user_account.account.name %></td>
+        <td><%= number_to_currency(0.0) %></td>
+        <td><%= number_to_percentage(0, precision: 2) %></td>
+        <td>CAD</td>
+    </tr>
+<% end %>
+</tbody>
+</table>
+<% @user_accounts.each do |user_account| %>
+    <% user_account.strategy.portfolios.each do |portfolio| %>
+        <%= portfolio.name %>
+        <%= pie_chart [["Canadian Equity", portfolio.cad_equity], ["US Equity", portfolio.us_equity], ["International Equity", portfolio.int_equity], ["Emerging Equity", portfolio.emerging_equity], ["Alternatives", portfolio.alternatives], ["Canadian Fixed Income", portfolio.cad_fixed_income], ["International", portfolio.int_fixed_income], ["Cash", portfolio.cash]],library: {legend: {position: "right"}}%>
+    <% end %>
+<% end %>

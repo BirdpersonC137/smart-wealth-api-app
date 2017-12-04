@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
-  resources :strategies
-  resources :user_accounts
-  resources :accounts
+  resources :user_dashboard, only: [:index, :edit, :update, :destroy]
+  resources :strategies, only: [:create, :destroy]
+  resources :user_accounts, only: [:new, :create, :destroy,:edit, :update]
+  resources :accounts, only: [:create, :destroy]
   resources :account_types, only: [:create]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

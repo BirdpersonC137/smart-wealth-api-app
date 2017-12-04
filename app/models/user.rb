@@ -8,6 +8,7 @@ class User < ApplicationRecord
   delegate :user_account, to: :user
   has_many :strategies, through: :user_accounts
   before_save :assign_age
+  has_one :user_dashboard
   private
     def assign_age
       @now = Time.now.utc.to_date

@@ -6,7 +6,7 @@ class UserAccountsController < InheritedResources::Base
     @user_account = UserAccount.new user_account_params
     @user_account.user = current_user
     if @user_account.save
-      redirect_to portfolios_path
+      redirect_to user_dashboard_index_path
     else
       redirect_to new_user_account_path
     end
