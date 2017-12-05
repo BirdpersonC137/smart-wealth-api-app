@@ -1,9 +1,10 @@
-<%= @user.first_name %> <%= @user.last_name %>
-Strategy: <%= @user.inv_objective %> portfolio
+<div class="container mt-3">
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+Strategy: <%= @user.inv_objective %>
 <table class="table table-bordered table-striped">
 <thead>
     <tr>
-        <th> Account </th>
+        <th> Accounts </th>
         <th> Current Value </th>
         <th> Growth </th>
         <th> Currency </th>
@@ -17,6 +18,15 @@ Strategy: <%= @user.inv_objective %> portfolio
         <td><%= number_to_percentage(0, precision: 2) %></td>
         <td>CAD</td>
     </tr>
+
 <% end %>
 </tbody>
 </table>
+<section class="pt-3">
+<% @user_accounts.each do |user_account| %>
+<h2><%= user_account.portfolio.name %></h2>
+<div class="col-lg-7 col-md-9 col-sm-12"><%= pie_chart [["Canadian Equity",user_account.portfolio.cad_equity], ["US Equity",user_account.portfolio.us_equity], ["International Equity",user_account.portfolio.int_equity], ["Emerging Equity",user_account.portfolio.emerging_equity], ["Alternatives",user_account.portfolio.alternatives], ["Canadian Fixed Income",user_account.portfolio.cad_fixed_income], ["International",user_account.portfolio.int_fixed_income], ["Cash",user_account.portfolio.cash]],library: {legend: {position: "left"}}%></div>
+<% end %>
+</section>
+
+</div>

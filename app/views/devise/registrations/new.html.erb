@@ -1,3 +1,4 @@
+<div class="container col-4 mt-5 formstyle">
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -11,9 +12,8 @@
     <% end %><br />
     <%= f.input :password, autocomplete: "off", placeholder: 'Password' %>
     <%= f.input :password_confirmation, autocomplete: "off", placeholder: 'Password Confirmation' %>
-  <div class="actions">
-    <%= f.submit "Sign up", class: 'btn btn-primary btn-raised' %>
+  <div class="actions d-flex justify-content-center mb-5 pt-3">
+    <%= f.submit "Sign up", class: 'btn btn-primary btn-raised submit' %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
