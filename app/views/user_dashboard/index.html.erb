@@ -20,9 +20,3 @@ Strategy: <%= @user.inv_objective %> portfolio
 <% end %>
 </tbody>
 </table>
-<% @user_accounts.each do |user_account| %>
-    <% user_account.strategy.portfolios.each do |portfolio| %>
-        <%= portfolio.name %>
-        <%= pie_chart [["Canadian Equity", portfolio.cad_equity], ["US Equity", portfolio.us_equity], ["International Equity", portfolio.int_equity], ["Emerging Equity", portfolio.emerging_equity], ["Alternatives", portfolio.alternatives], ["Canadian Fixed Income", portfolio.cad_fixed_income], ["International", portfolio.int_fixed_income], ["Cash", portfolio.cash]],library: {legend: {position: "right"}}%>
-    <% end %>
-<% end %>

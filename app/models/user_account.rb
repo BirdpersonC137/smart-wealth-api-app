@@ -2,6 +2,7 @@ class UserAccount < ApplicationRecord
   belongs_to :account
   belongs_to :user
   belongs_to :strategy, optional: true
+  belongs_to :portfolio, optional: true
   validates_numericality_of :financial_goal, :annual_income, :fin_assets, :non_fin_assets, :liabilities
   validates(:financial_goal, numericality:{
     greater_than_or_equal_to: 0

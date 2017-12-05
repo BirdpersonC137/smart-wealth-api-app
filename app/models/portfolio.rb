@@ -3,6 +3,7 @@ class Portfolio < ApplicationRecord
     has_many :investments, through: :investment_portfolios
     has_many :portfolio_strategies, dependent: :destroy
     has_many :strategies, through: :portfolio_strategies
+    has_many :user_accounts, dependent: :destroy
     validate :over_100
     validates_numericality_of :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash
     validates_presence_of :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash

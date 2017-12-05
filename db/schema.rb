@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204043619) do
+ActiveRecord::Schema.define(version: 20171204221027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,7 +155,9 @@ ActiveRecord::Schema.define(version: 20171204043619) do
     t.float "time_horizon"
     t.float "age_factor"
     t.bigint "strategy_id"
+    t.bigint "portfolio_id"
     t.index ["account_id"], name: "index_user_accounts_on_account_id"
+    t.index ["portfolio_id"], name: "index_user_accounts_on_portfolio_id"
     t.index ["strategy_id"], name: "index_user_accounts_on_strategy_id"
     t.index ["user_id"], name: "index_user_accounts_on_user_id"
   end
@@ -211,6 +213,7 @@ ActiveRecord::Schema.define(version: 20171204043619) do
   add_foreign_key "survey_answers", "users"
   add_foreign_key "survey_questions", "risk_assessments"
   add_foreign_key "user_accounts", "accounts"
+  add_foreign_key "user_accounts", "portfolios"
   add_foreign_key "user_accounts", "strategies"
   add_foreign_key "user_accounts", "users"
   add_foreign_key "user_dashboards", "users"

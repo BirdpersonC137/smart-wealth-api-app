@@ -6,9 +6,20 @@ class UserAccountsController < InheritedResources::Base
     @user_account = UserAccount.new user_account_params
     @user_account.user = current_user
     if @user_account.save
-      redirect_to user_dashboard_index_path
+      redirect_to edit_user_account_path(@user_account)
     else
       redirect_to new_user_account_path
+    end
+  end
+  def edit
+    @user_account = UserAccount.find params[:id]    
+  end
+  def update
+    @user_account = UserAccount.find params[:id]
+    if @user_account.update user_account_params
+      redirect_to user_dashboard_index_path
+    else
+      render :edit
     end
   end
   private
@@ -21,7 +32,9 @@ class UserAccountsController < InheritedResources::Base
                                                  :liabilities, :user_id, 
                                                  :withdrawals, 
                                                  :inc_stability, 
-                                                 :time_horizon, :strategy_id)
+                                                 :time_horizon, :strategy_id,
+                                                 :portfolio_id)
     end
+
 end
 
