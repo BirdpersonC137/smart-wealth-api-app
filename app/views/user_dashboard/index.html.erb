@@ -5,8 +5,9 @@ Strategy: <%= @user.inv_objective %>
 <thead>
     <tr>
         <th> Accounts </th>
+        <th> Book Value </th>
         <th> Current Value </th>
-        <th> Growth </th>
+        <th> Returns </th>
         <th> Currency </th>
     </tr>
 </thead>
@@ -14,19 +15,69 @@ Strategy: <%= @user.inv_objective %>
 <% @user_accounts.each do |user_account| %>
     <tr>
         <td><%= user_account.account.name %></td>
-        <td><%= number_to_currency(0.0) %></td>
-        <td><%= number_to_percentage(0, precision: 2) %></td>
+        <td><%= number_to_currency(user_account.init_investment) %></td>
+        <% if user_account.init_investment > 0 %>
+            <td><%= number_to_currency(user_account.init_investment * 1.12059) %></td>
+            <td><%= number_to_percentage(12.059, precision: 2) %></td>
+        <% else %>
+            <td><%= number_to_currency(user_account.init_investment * 1.12059) %></td>
+            <td><%= number_to_percentage(0, precision: 2) %></td>
+        <% end %>
         <td>CAD</td>
     </tr>
 
 <% end %>
 </tbody>
 </table>
-<section class="pt-3">
+<section class="pt-3 mb-4">
 <% @user_accounts.each do |user_account| %>
-<h2><%= user_account.portfolio.name %></h2>
-<div class="col-lg-7 col-md-9 col-sm-12"><%= pie_chart [["Canadian Equity",user_account.portfolio.cad_equity], ["US Equity",user_account.portfolio.us_equity], ["International Equity",user_account.portfolio.int_equity], ["Emerging Equity",user_account.portfolio.emerging_equity], ["Alternatives",user_account.portfolio.alternatives], ["Canadian Fixed Income",user_account.portfolio.cad_fixed_income], ["International",user_account.portfolio.int_fixed_income], ["Cash",user_account.portfolio.cash]],library: {legend: {position: "left"}}%></div>
+<h3>Assigned Portfolio: <%= user_account.portfolio.name %></h3>
+<div class="row">
+    <div class="col-6">
+        <h3>Returns</h3>
+        <% if user_account.init_investment > 0 %>
+        <%= line_chart({30.days.ago => 1000, 15.day.ago => 1050.29, Time.now => 1120.59}) %>
+        <% else %>
+        <%= line_chart({30.day.ago => 0, 15.day.ago=>0, Time.now => 0}) %>
+        <% end %>
+    </div>
+    <div class="col-6 pt-2">
+       <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>Canadian Equity:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.cad_equity)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>US equity:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.us_equity)%></div>
+
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>International Equity:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.int_equity)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>Emerging Equity:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.emerging_equity)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>Alternative:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.alternatives)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>Canadian Fixed Income:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.cad_fixed_income)%></div>
+       </div>
+       <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>International Fixed Income:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.int_fixed_income)%></div>
+       </div>
+        <div class="d-flex justify-space-between row">
+            <div class="col-8"><strong>Cash:</strong></div>
+            <div class="col-4 d-flex justify-content-end"><%= number_to_percentage(user_account.portfolio.cash)%></div>
+       </div>
+        <div class="pt-2"><%= pie_chart [["Canadian Equity",user_account.portfolio.cad_equity], ["US Equity",user_account.portfolio.us_equity], ["International Equity",user_account.portfolio.int_equity], ["Emerging Equity",user_account.portfolio.emerging_equity], ["Alternatives",user_account.portfolio.alternatives], ["Canadian Fixed Income",user_account.portfolio.cad_fixed_income], ["International Fixed Income",user_account.portfolio.int_fixed_income], ["Cash",user_account.portfolio.cash]],library: {legend: {position: "left"}}%></div>
+       
+    </div>
+</div>
 <% end %>
 </section>
-
-</div>

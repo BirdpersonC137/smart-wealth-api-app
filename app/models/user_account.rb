@@ -7,7 +7,7 @@ class UserAccount < ApplicationRecord
   validates(:financial_goal, numericality:{
     greater_than_or_equal_to: 0
 })
-  before_save :user_age_factor
+  before_save :user_age_factor, :set_default_init_investment
   after_save :assign_risk_profile_to_user
   private
   def user_age_factor
@@ -23,6 +23,9 @@ class UserAccount < ApplicationRecord
     else 
       self.age_factor = 0
     end
+  end
+  def set_default_init_investment
+    self.init_investment ||= 0
   end
   def assign_risk_profile_to_user
     @user = self.user

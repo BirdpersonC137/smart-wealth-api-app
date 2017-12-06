@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204221027) do
+ActiveRecord::Schema.define(version: 20171205225552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(version: 20171204221027) do
     t.float "age_factor"
     t.bigint "strategy_id"
     t.bigint "portfolio_id"
+    t.float "init_investment"
     t.index ["account_id"], name: "index_user_accounts_on_account_id"
     t.index ["portfolio_id"], name: "index_user_accounts_on_portfolio_id"
     t.index ["strategy_id"], name: "index_user_accounts_on_strategy_id"
