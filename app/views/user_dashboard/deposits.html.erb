@@ -1,0 +1,14 @@
+<div class="container mt-3">
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="/user_dashboard">Your Account</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/deposits">Make a Deposit</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">About <%= @user_account.portfolio.name %> portfolio</a>
+  </li>
+</ul>
+</div>
