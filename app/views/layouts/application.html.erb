@@ -21,7 +21,7 @@
         <a class="navbar-nav ml-auto">
         <% if user_signed_in? %>
             <a><%= link_to 'Your Account', user_dashboard_index_path, class: 'nav-item nav-link' %></a>
-            <a><spans class="nav-item nav-link">Logged in as <strong><%= current_user.email %></strong>.</span></a>
+            <a><spans class="nav-item nav-link">Hello, <strong><%= current_user.first_name %> <%= current_user.last_name %></strong></span></a>
             <a><%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-item nav-link' %></a>
             <a><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-item nav-link'  %></a>
           <% else %>

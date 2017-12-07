@@ -2,7 +2,14 @@
 <%= simple_form_for @user_account do |form| %>
         <% @user_account.strategy.portfolios.each do |portfolio| %>
         <label class="btn btn-primary"><%= form.radio_button :portfolio_id, portfolio.id %>  <%= form.label :portfolio, portfolio.name, class: "pl-2" %></label>
-        <div class="col-7"><%= pie_chart [["Canadian Equity", portfolio.cad_equity], ["US Equity", portfolio.us_equity], ["International Equity", portfolio.int_equity], ["Emerging Equity", portfolio.emerging_equity], ["Alternatives", portfolio.alternatives], ["Canadian Fixed Income", portfolio.cad_fixed_income], ["International", portfolio.int_fixed_income], ["Cash", portfolio.cash]],library: {legend: {position: "right"}}%></div>
+        <div class="col-7"><%= pie_chart [["Canadian Equity", portfolio.cad_equity], 
+                                          ["US Equity", portfolio.us_equity], 
+                                          ["International Equity", portfolio.int_equity], 
+                                          ["Emerging Equity", portfolio.emerging_equity], 
+                                          ["Alternatives", portfolio.alternatives], 
+                                          ["Canadian Fixed Income", portfolio.cad_fixed_income], 
+                                          ["International", portfolio.int_fixed_income], 
+                                          ["Cash", portfolio.cash]],library: {legend: {position: "right"}}%></div>
     <% end %>
     <%= form.submit "Next", class: "btn btn-primary btn-raised" %>
 <% end %>

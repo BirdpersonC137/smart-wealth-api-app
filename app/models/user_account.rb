@@ -28,38 +28,45 @@ class UserAccount < ApplicationRecord
     self.init_investment ||= 0
   end
   def assign_risk_profile_to_user
-    @user = self.user
-    @ipq = [self.liabilities, self.fin_assets, self.non_fin_assets, self.annual_income, self.age_factor, self.time_horizon, self.withdrawals, self.inc_stability].sum
+      @user = self.user
+      @ipq = [self.liabilities, 
+              self.fin_assets, 
+              self.non_fin_assets, 
+              self.annual_income, 
+              self.age_factor, 
+              self.time_horizon, 
+              self.withdrawals, 
+              self.inc_stability].sum
     if @ipq > 0 && @ipq <= 14
-      @user.risk_profile = "Low Risk Tolerance"
-      @user.inv_objective = 'Defensive'
-      @user.IPQ = @ipq
-      self.update_column(:strategy_id, Strategy.where(name: 'Preservation of Capital').first.id)
-      @user.save
+        @user.risk_profile = "Low Risk Tolerance"
+        @user.inv_objective = 'Defensive'
+        @user.IPQ = @ipq
+        self.update_column(:strategy_id, Strategy.where(name: 'Preservation of Capital').first.id)
+        @user.save
     elsif @ipq > 14 && @ipq <=26
-      @user.risk_profile = "Low to Medium"
-      @user.inv_objective = 'Income' 
-      @user.IPQ = @ipq
-      self.update_column(:strategy_id, Strategy.where(name: 'Conservative Growth').first.id)      
-      @user.save
+        @user.risk_profile = "Low to Medium"
+        @user.inv_objective = 'Income' 
+        @user.IPQ = @ipq
+        self.update_column(:strategy_id, Strategy.where(name: 'Conservative Growth').first.id)      
+        @user.save
     elsif @ipq > 26 && @ipq <= 38
-      @user.risk_profile = "Medium"
-      @user.inv_objective = 'Balanced'
-      @user.IPQ = @ipq
-      self.update_column(:strategy_id, Strategy.where(name: 'Growth').first.id)            
-      @user.save
+        @user.risk_profile = "Medium"
+        @user.inv_objective = 'Balanced'
+        @user.IPQ = @ipq
+        self.update_column(:strategy_id, Strategy.where(name: 'Growth').first.id)            
+        @user.save
     elsif @ipq > 38 && @ipq <= 50
-      @user.risk_profile = "Medium to High"
-      @user.inv_objective = 'Growth'
-      @user.IPQ = @ipq
-      self.update_column(:strategy_id, Strategy.where(name: 'Aggressive Growth').first.id)                  
-      @user.save
+        @user.risk_profile = "Medium to High"
+        @user.inv_objective = 'Growth'
+        @user.IPQ = @ipq
+        self.update_column(:strategy_id, Strategy.where(name: 'Aggressive Growth').first.id)                  
+        @user.save
     else
-      @user.risk_profile = "High"
-      @user.inv_objective = 'Growth'
-      @user.IPQ = @ipq
-      self.update_column(:strategy_id, Strategy.where(name: 'Alpha').first.id)                  
-      @user.save
+        @user.risk_profile = "High"
+        @user.inv_objective = 'Growth'
+        @user.IPQ = @ipq
+        self.update_column(:strategy_id, Strategy.where(name: 'Alpha').first.id)                  
+        @user.save
     end
   end
 end

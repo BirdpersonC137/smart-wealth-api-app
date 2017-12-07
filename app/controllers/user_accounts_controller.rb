@@ -33,7 +33,8 @@ class UserAccountsController < InheritedResources::Base
                                                  :withdrawals, 
                                                  :inc_stability, 
                                                  :time_horizon, :strategy_id,
-                                                 :portfolio_id)
+                                                 :portfolio_id,
+                                                 :init_investment)
     end
 
 end

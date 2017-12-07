@@ -11,4 +11,12 @@
     <a class="nav-link" href="#">About <%= @user_account.portfolio.name %> portfolio</a>
   </li>
 </ul>
+<div class="col-4">
+<% if @user_account.init_investment %>
+  <%= simple_form_for @user_account do |form| %>
+    <%= form.input :init_investment, label: "Deposit" %>
+    <%= form.submit "Add funds", class: "btn btn-primary btn-raised" %>
+  <% end %>
+<% end %>
+</div>
 </div>
