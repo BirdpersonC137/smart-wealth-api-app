@@ -96,8 +96,6 @@ ActiveRecord::Schema.define(version: 20171205225552) do
 
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.float "cad_equity"
     t.float "us_equity"
     t.float "int_equity"
@@ -106,10 +104,6 @@ ActiveRecord::Schema.define(version: 20171205225552) do
     t.float "cad_fixed_income"
     t.float "int_fixed_income"
     t.float "cash"
-  end
-
-  create_table "risk_assessments", force: :cascade do |t|
-    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -118,25 +112,6 @@ ActiveRecord::Schema.define(version: 20171205225552) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "survey_answers", force: :cascade do |t|
-    t.bigint "survey_question_id"
-    t.bigint "user_id"
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["survey_question_id"], name: "index_survey_answers_on_survey_question_id"
-    t.index ["user_id"], name: "index_survey_answers_on_user_id"
-  end
-
-  create_table "survey_questions", force: :cascade do |t|
-    t.string "title"
-    t.bigint "risk_assessment_id"
-    t.integer "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["risk_assessment_id"], name: "index_survey_questions_on_risk_assessment_id"
   end
 
   create_table "user_accounts", force: :cascade do |t|
@@ -163,17 +138,11 @@ ActiveRecord::Schema.define(version: 20171205225552) do
     t.index ["user_id"], name: "index_user_accounts_on_user_id"
   end
 
-  create_table "user_dashboards", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_dashboards_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "date_of_birth"
+    t.integer "age"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -197,7 +166,6 @@ ActiveRecord::Schema.define(version: 20171205225552) do
     t.string "ability_to_assume_risk"
     t.string "strategy"
     t.decimal "IPQ"
-    t.integer "age"
     t.string "inv_objective"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -210,12 +178,8 @@ ActiveRecord::Schema.define(version: 20171205225552) do
   add_foreign_key "investment_portfolios", "portfolios"
   add_foreign_key "portfolio_strategies", "portfolios"
   add_foreign_key "portfolio_strategies", "strategies"
-  add_foreign_key "survey_answers", "survey_questions"
-  add_foreign_key "survey_answers", "users"
-  add_foreign_key "survey_questions", "risk_assessments"
   add_foreign_key "user_accounts", "accounts"
   add_foreign_key "user_accounts", "portfolios"
   add_foreign_key "user_accounts", "strategies"
   add_foreign_key "user_accounts", "users"
-  add_foreign_key "user_dashboards", "users"
 end

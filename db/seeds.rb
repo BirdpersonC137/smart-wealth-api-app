@@ -1,9 +1,11 @@
 require "csv"
 Investment.destroy_all
 Portfolio.destroy_all
+Account.destroy_all
+Strategy.destroy_all
+AdminUser.destroy_all
 
 CSV.foreach(Rails.root.join('investmentcsv.csv'), headers: true) do |row|
-    p row  
   Investment.create! do |investment|
   investment.ticker = row[0]
   investment.name = row['name']
@@ -37,12 +39,35 @@ Portfolio.create(name: 'PFIC - Conservative Growth', cad_equity: 10.0, us_equity
 Portfolio.create(name: 'PFIC - Balanced', cad_equity: 10, us_equity: 19.5, int_equity: 19.0, emerging_equity: 7.5, alternatives: 17.5, cad_fixed_income: 0, int_fixed_income: 25, cash: 1.5)
 Portfolio.create(name: 'Ethical', cad_equity: 10, us_equity: 5, int_equity: 30, emerging_equity: 0, alternatives: 25, cad_fixed_income: 0, int_fixed_income: 28, cash: 2)
 
+Account.create(name: 'TFSA')
+Account.create(name: 'Individual')
+Account.create(name: 'Joint - Right of Survivorship')
+Account.create(name: 'Individual RRSP')
+Account.create(name: 'Spousal RRSP')
+Account.create(name: 'Individual RRIF')
+Account.create(name: 'Spousal RRIF')
+Account.create(name: 'Individual RESP')
+Account.create(name: 'Family RESP')
+Account.create(name: 'LIRA - Locked-in Retirement Account')
 
+Strategy.create(name: 'Preservation of Capital')
+Strategy.create(name: 'Conservative Growth')
+Strategy.create(name: 'Balanced')
+Strategy.create(name: 'Growth')
+Strategy.create(name: 'Aggressive Growth')
+Strategy.create(name: 'Alpha')
+Strategy.create(name: 'Income')
+Strategy.create(name: 'Corporate')
+Strategy.create(name: 'Ethical')
+
+
+strategies = Strategy.all
+accounts = Account.all
 portfolios = Portfolio.all
 
 puts "#{Portfolio.count} portfolios was created"
 puts "There are now #{Investment.count} rows in the transactions table"
-
+puts "#{accounts.count} were created"
 # params(
 # :ticker, 
 # :name, 

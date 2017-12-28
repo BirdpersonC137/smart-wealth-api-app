@@ -9,6 +9,7 @@ class UserAccountsController < InheritedResources::Base
       redirect_to edit_user_account_path(@user_account)
     else
       redirect_to new_user_account_path
+      p @user_account.errors.full_messages
     end
   end
   def edit
