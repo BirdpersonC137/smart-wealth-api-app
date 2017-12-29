@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205225552) do
+ActiveRecord::Schema.define(version: 20171228233104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,8 @@ ActiveRecord::Schema.define(version: 20171205225552) do
     t.float "cash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "strategy_id"
+    t.index ["strategy_id"], name: "index_portfolios_on_strategy_id"
   end
 
   create_table "strategies", force: :cascade do |t|
@@ -178,6 +180,7 @@ ActiveRecord::Schema.define(version: 20171205225552) do
   add_foreign_key "investment_portfolios", "portfolios"
   add_foreign_key "portfolio_strategies", "portfolios"
   add_foreign_key "portfolio_strategies", "strategies"
+  add_foreign_key "portfolios", "strategies"
   add_foreign_key "user_accounts", "accounts"
   add_foreign_key "user_accounts", "portfolios"
   add_foreign_key "user_accounts", "strategies"
