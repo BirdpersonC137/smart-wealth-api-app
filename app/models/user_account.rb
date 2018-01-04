@@ -53,19 +53,19 @@ class UserAccount < ApplicationRecord
         @user.risk_profile = "Medium"
         @user.inv_objective = 'Balanced'
         @user.IPQ = @ipq
-        self.update_column(:strategy_id, Strategy.where(name: 'Growth').first.id)            
+        self.update_column(:strategy_id, Strategy.where(name: 'Balanced').first.id)            
         @user.save
     elsif @ipq > 38 && @ipq <= 50
         @user.risk_profile = "Medium to High"
         @user.inv_objective = 'Growth'
         @user.IPQ = @ipq
-        self.update_column(:strategy_id, Strategy.where(name: 'Aggressive Growth').first.id)                  
+        self.update_column(:strategy_id, Strategy.where(name: 'Growth').first.id)                  
         @user.save
     else
         @user.risk_profile = "High"
         @user.inv_objective = 'Growth'
         @user.IPQ = @ipq
-        self.update_column(:strategy_id, Strategy.where(name: 'Alpha').first.id)                  
+        self.update_column(:strategy_id, Strategy.where(name: 'Aggressive Growth').first.id)                  
         @user.save
     end
   end
