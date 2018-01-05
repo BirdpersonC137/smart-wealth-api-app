@@ -23,6 +23,7 @@ class PortfoliosController < ApplicationController
         format.html { redirect_to @portfolio, notice: 'Portfolio was successfully created.' }
         format.json { render :show, status: :created, location: @portfolio }
       else
+        p @portfolio.errors.full_messages
         format.html { render :new }
         format.json { render json: @portfolio.errors, status: :unprocessable_entity }
       end
@@ -49,12 +50,15 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def portfolio_holdings
+    @investments = Portfolio.investments
+  end
   private
     def set_portfolio
       @portfolio = Portfolio.find(params[:id])
     end
 
     def portfolio_params
-      params.require(:portfolio).permit(:name, :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash, {strategy_ids:[]} )
+      params.require(:portfolio).permit(:name, :cad_equity, :us_equity, :int_equity, :emerging_equity, :alternatives, :cad_fixed_income, :int_fixed_income, :cash, :strategy_id, {investment_ids:[]})
     end
 end

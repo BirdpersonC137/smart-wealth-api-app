@@ -63,9 +63,10 @@ ActiveRecord::Schema.define(version: 20171228233104) do
   create_table "investment_portfolios", force: :cascade do |t|
     t.bigint "investment_id"
     t.bigint "portfolio_id"
+    t.float "weight"
+    t.string "investment_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "weight"
     t.index ["investment_id"], name: "index_investment_portfolios_on_investment_id"
     t.index ["portfolio_id"], name: "index_investment_portfolios_on_portfolio_id"
   end

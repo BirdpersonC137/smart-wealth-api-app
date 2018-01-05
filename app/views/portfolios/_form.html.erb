@@ -8,7 +8,8 @@
     <%= form.input :cad_fixed_income %>
     <%= form.input :int_fixed_income %>
     <%= form.input :cash %>
-    <%= form.association :strategies,label: 'Choose Portfolio Strategy: ', input_html: { class: 'chosen-select' } %>
+    <%= form.association :strategy, label: 'Choose Strategy'%>
+    <%= form.association :investments,label: 'Choose Portfolio investments: ', input_html: { class: 'chosen-select' } %>
     <%= form.submit class: 'btn btn-primary'%>
   </div>
 <% end %>
