@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  before_action :set_portfolio, only: [:show, :edit, :update, :destroy, :holdings]
   helper_method :sort_column, :sort_direction
   
   def index
@@ -50,8 +50,7 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def portfolio_holdings
-    @investments = Portfolio.investments
+  def holdings
   end
   private
     def set_portfolio

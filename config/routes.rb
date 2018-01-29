@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :account_types, only: [:create]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :portfolios
+  resources :portfolios do
+    get :holdings, on: :member
+  end
   devise_for :users, controllers: {:registrations => "registrations"}
   resources :investments
   get '/deposits', to: 'user_dashboard#deposits'
